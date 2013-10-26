@@ -1,0 +1,6 @@
+project: project.l project.y
+	bison -d project.y
+	flex project.l
+	gcc -o $@ project.tab.c lex.yy.c -lfl
+clean:
+	rm project.tab.c lex.yy.c project.tab.h project

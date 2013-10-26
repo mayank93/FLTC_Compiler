@@ -1,0 +1,26 @@
+Mayank Gupta
+201101004
+Compiler
+Project Phase1
+
+To execute:
+
+$ make
+$./phase1 "file.c"	//name of file which contains program in Flat Tiny C (FLTC)
+
+There are sample test cases (1 to 4)  are included
+Testcase(1,2,3) are correct and output nothing.
+Testcase(4) are wrong testcase which output the line in which error occured.
+
+$ ./phase 1
+
+$ ./phase 2
+
+$ ./phase 3
+
+$ ./phase 4
+./phase1:syntax error near line 14
+
+About:
+The program contains to file phase1.l and phase1.y.This parser, created using Flex and Bison validates the syntax of a Flat Tiny C program given as a command line argument to this program.
+
