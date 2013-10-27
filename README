@@ -1,2 +1,48 @@
 Compiler for Flat Tiny C
+
+
+		Grammar
+
+Program 		--> class main '{' Field_Decl* Statement* '}'
+
+Field_Decl 		--> Type {id|id '[' int_literal ']' }+,;
+
+Type 			--> int|boolean|char
+
+Statement		-->Labelled_Statement
+			|Location = Expr;
+			|if Expr the goto label; //label is a token like id
+			|got label;
+			|Method_Call;
+
+Labelled_Statement	-->label_Statement //think of label as "id:"
+
+Location		-->id
+			|id [Expr]
+
+Expr			--> Literal
+			|Location
+			|Expr Binop Expr 
+			|-Exor 
+			|+Expr 
+			|!Expr
+			|(Expr)
+
+Binop			-->Arithop
+			|Relop
+			|Condop
+
+Airthop			-->+|-|*|/
+
+Relop			--><|>|<=|>=|==|!=
+
+Condop			-->&& | ||
+
+Methog_Call		-->print( Expr +,);
+			|read ( Location );
+
+Literal			-->int_literal
+			| string_literal
+			|char_literal
+			|bool_literal
 TO BE UPDATED
